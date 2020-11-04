@@ -17,13 +17,13 @@ namespace str3
                     Environment.Exit(0);
                 }
                 Console.WriteLine("Podaj PIN:");
-                PIN = Console.ReadLine();
+                PIN = Console.ReadLine(); //wczytanie pinu
                 if (PIN != "1234")
                 {
                     Console.WriteLine("PIN jest nieprawidłowy, zostało {0} prób", 3 - tryCount);
                 }
             }
-            decimal accountBalance = 9234234.73m;
+            decimal accountBalance = 9234234.73m; //pieniadze na koncie "na start"
         MenuCommand:
             Console.WriteLine("1.Stan konta\n2.Wpłata\n3.Wypłata\n4.Wyjście");
             string choice = Console.ReadLine();
@@ -71,7 +71,7 @@ namespace str3
                 decimal amount;
                 if(decimal.TryParse(input,out amount))
                 {
-                    if((amount % 20 == 0) || (amount % 50 == 0))
+                    if((amount % 20 == 0) || (amount % 50 == 0)) //sprawdzenie czy podana kwota moze byc wydana w banknotach
                     {
                         return amount;
                     }
